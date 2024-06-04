@@ -79,7 +79,12 @@ public class MainActivity extends AppCompatActivity {
             score++;
         }
         scoreTextView.setText("Score: " + score);
-
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questionList.size()) {
+            loadQuestion();
+        } else {
+            showFinalScore();
+        }
     }
 
     private void showFinalScore() {
